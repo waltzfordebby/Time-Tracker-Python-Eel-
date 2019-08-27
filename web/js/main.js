@@ -16,7 +16,7 @@ function setDate() {
     let pythonDate = eel.get_date()();
 
     pythonDate.then(value => {
-        dateContainer.innerHTML = `${value}`;
+        dateContainer.innerHTML = value;
     })
 }
 
