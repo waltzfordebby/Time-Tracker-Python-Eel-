@@ -1,8 +1,24 @@
-eel.expose(say_hello_js);
+const timeContainer = document.getElementById('time');
+const dateContainer = document.getElementById('date');
 
-function say_hello_js(x) {
-    console.log("Hello from " + x);
+function setTime() {
+    let pythonTime = eel.get_time()();
+
+    pythonTime.then(value => {
+        timeContainer.innerHTML = value;
+    });
+
+    setTimeout(setTime, 1000);
 }
 
-say_hello_js("Javascript World!");
-eel.say_hello_py("Javascript World!");
+
+function setDate() {
+    let pythonDate = eel.get_date()();
+
+    pythonDate.then(value => {
+        dateContainer.innerHTML = `${value}`;
+    })
+}
+
+setTime();
+setDate();
