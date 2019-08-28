@@ -22,7 +22,7 @@ function setDate() {
 }
 
 function setBgColor() {
-    let pythonColor = eel.set_bg_color()();
+    let pythonColor = eel.get_bg_color()();
 
     pythonColor.then(value => {
         document.body.style.backgroundColor = value;
