@@ -1,6 +1,8 @@
-import eel
+import json
 import time
 from datetime import datetime
+
+import eel
 
 eel.init("web")
 
@@ -25,6 +27,18 @@ def get_time():
 @eel.expose
 def get_date():
     return datetime.now().strftime("%A, %d %B %Y")
+
+@eel.expose
+def set_bg_color():
+    current_time = datetime.now().strftime("%I:%M:%S %p").lstrip("0")
+    if "AM" in period:
+        if current_hour in conflicting_time:
+            return "#000000"
+        return "#87CEEB"
+    elif "PM" in period:
+        if current_hour in conflicting_time:
+            return "#87CEEB"
+        return "#000000"
 
 
 eel.start("main.html", size=(600, 500))

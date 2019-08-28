@@ -21,5 +21,16 @@ function setDate() {
     setTimeout(setDate, 1000);
 }
 
+function setBgColor() {
+    let pythonColor = eel.set_bg_color()();
+
+    pythonColor.then(value => {
+        document.body.style.backgroundColor = value;
+    });
+
+    setTimeout(setBgColor, 1000);
+}
+
 setTime();
 setDate();
+setBgColor();
