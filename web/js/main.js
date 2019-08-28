@@ -11,13 +11,14 @@ function setTime() {
     setTimeout(setTime, 1000);
 }
 
-
 function setDate() {
     let pythonDate = eel.get_date()();
 
     pythonDate.then(value => {
         dateContainer.innerHTML = value;
-    })
+    });
+
+    setTimeout(setDate, 1000);
 }
 
 setTime();
