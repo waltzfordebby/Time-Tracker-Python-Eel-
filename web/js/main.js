@@ -1,6 +1,7 @@
 const timeContainer = document.getElementById('time');
 const dateContainer = document.getElementById('date');
 
+
 function setTime() {
     let pythonTime = eel.get_time()();
 
@@ -22,15 +23,24 @@ function setDate() {
 }
 
 function setBgColor() {
-    let pythonColor = eel.get_bg_color()();
+    let pythonBGColor = eel.get_bg_color()();
 
-    pythonColor.then(value => {
+    pythonBGColor.then(value => {
         document.body.style.backgroundColor = value;
     });
 
     setTimeout(setBgColor, 1000);
 }
 
+function setFontColor() {
+    let pythonFontColor = eel.get_font_color()();
+
+    pythonFontColor.then(value => {
+        document.body.style.color = value;
+    });
+}
+
 setTime();
 setDate();
 setBgColor();
+setFontColor();

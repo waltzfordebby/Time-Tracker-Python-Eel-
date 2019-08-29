@@ -41,5 +41,10 @@ def get_bg_color():
     return set_value_day_night("#87CEEB", "#000000")
 
 
+@eel.expose
+def get_font_color():
+    return set_value_day_night("#000000", "#FFFFFF")
+
+
 eel.start("main.html", size=(600, 500))
 
