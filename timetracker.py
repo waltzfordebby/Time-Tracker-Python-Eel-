@@ -6,9 +6,16 @@ import eel
 
 eel.init("web")
 
+# Date and Time Variables
 current_hour = time.strftime("%I").lstrip("0")
 period = time.strftime("%p")
 conflicting_time = ["12", "1", "2", "3", "4", "5"]
+
+# Color variables
+day_bg_color = "#7289da"
+day_font_color = "#ffffff"
+night_bg_color = "#2c2f33"
+night_font_color = "#ffffff"
 
 
 def set_value_day_night(day_value, night_value):
@@ -38,12 +45,16 @@ def get_date():
 
 @eel.expose
 def get_bg_color():
-    return set_value_day_night("#87CEEB", "#000000")
+    return set_value_day_night(day_bg_color, night_bg_color)
 
 
 @eel.expose
 def get_font_color():
-    return set_value_day_night("#000000", "#FFFFFF")
+    return set_value_day_night(day_font_color, night_font_color)
+
+@eel.expose
+def get_button_color():
+    return set_value_day_night(night_bg_color, day_bg_color)
 
 
 eel.start("main.html", size=(600, 500))
